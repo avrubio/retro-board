@@ -1,36 +1,7 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-// export function Buttons() {
-//   // // useState will allow us add, delete, update items
-//   // const [actionItems, setActionItems] = useState([]);
-//   // // add a new item to actionsItems array
-//   // const addItem = () => {
-//   //   setActionItems([...actionItems, ""]);
-//   // };
-//   // // delete items in actionItems Array
-//   // const deleteItem = (index) => {
-//   //   setActionItems(
-//   //     actionItems.filter((item, currentIndex) => currentIndex !== index)
-//   //   );
-//   // };
-
-//   // // update items
-//   // const updateItem = (userInput, index) => {
-//   //   const newActionItems = [...actionItems];
-//   //   newActionItems[index] = userInput;
-//   //   setActionItems(newActionItems);
-//   // };
-
-//   return <></>;
-// }
-
-// export function DeleteButton() {}
-
-// export function MoveRight() {}
-// export function MoveLeft() {}
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function LikeBtn() {
   // updates likes

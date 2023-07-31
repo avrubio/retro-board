@@ -1,13 +1,6 @@
 import NewItem from './Buttons/NewItem';
 
 export function RetroBoard() {
-  // const toggleLayout = useContext(LayoutContext);
-  // const [setLayout] = useContext(LayoutContext);
-
-  // const handleClick = (e) => {
-  //   e.prevent.default();
-  //   // toggleLayout();
-  // };
   return (
     <>
       {/*<!-- The class "row" is for the layout changer --> */}
