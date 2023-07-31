@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 ## Retro-Board Project
 
 ## Project Overview
+=======
+## Retro-Board Project Overview
+>>>>>>> cf41c13724dfbeca1d98a8afbbf4be0b740444da
 
 The Retro Board project is a web application that allows team members to conduct a retrospective after a sprint or software release. It is based on the Scrum methodology, an Agile style of software project management. The application provides three categories: "Went Well," "To Improve," and "Action Items," where team members can add and organize retrospective items. Additionally, the application allows for voting on retrospective items and provides options to change the layout of the board.
 
@@ -10,7 +14,7 @@ To implement and apply concepts learned in CanCode Communities JavaScript Framew
 
 ## Getting Started
 
-Using your command line, you will need to navigate to the this folder, install all dependencies, and start the app.
+Using your command line, you will need to navigate to this folder, install all dependencies, and start the app.
 
 ```bash
 cd exercises/14-suspense/
