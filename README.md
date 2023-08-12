@@ -11,7 +11,7 @@ To implement and apply concepts learned in CanCode Communities JavaScript Framew
 Using your command line, you will need to navigate to this folder, install all dependencies, and start the app.
 
 ```bash
-cd exercises/14-suspense/
+cd retro-board
 code . # if you would like to open this in a separate VSCode window
 npm install
 npm start
