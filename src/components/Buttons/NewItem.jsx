@@ -2,22 +2,14 @@ import {
   faChevronLeft,
   faChevronRight,
   faTrashCan,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { DislikeBtn } from './DislikeBtn';
-import { LikeBtn } from './LikeBtn';
+import { DislikeBtn } from "./DislikeBtn";
+import { LikeBtn } from "./LikeBtn";
 
 export default function NewItem(props) {
-  // console.log("new item", props.title, props.retroItems);
   //declaring retroItems, since it will be updated
-
-  // const [retroItems, setRetroItems] = useState([
-  //   { category, userInput: "example" },
-  // ]);
-
-  // {category: '1', userInput:'went well', {category: '2', userInput:'to improve'}, {category: '3', userInput: 'action items'}
-
   // adding a new item to an array for retroItems
 
   const newItem = () => {
@@ -38,13 +30,6 @@ export default function NewItem(props) {
       }
     }
   };
-
-  ////TODOO: refactor to use id instead of index similar to update item, it needs to pass the id
-
-  // deletes items by its index in the array
-  // const deleteItem = (id) => {
-  //   props.setRetroItems(props.retroItems.filter((id) => id !== id));
-  // };
 
   const deleteItem = (itemId) => {
     props.setRetroItems(props.retroItems.filter((item) => item.id !== itemId));
@@ -79,22 +64,14 @@ export default function NewItem(props) {
     }
   };
 
-  const newArray = props.retroItems.filter((item) => {
-    if (props.category === item.category) {
-      // console.log(item); // Same idea, but change this
-      // newRetroItems.push(props.retroItems[i]) // This should be different r
+  // const newArray = props.retroItems.filter((item) => {
+  //   if (props.category === item.category) {
+  //     // console.log(item); // Same idea, but change this
+  //     // newRetroItems.push(props.retroItems[i]) // This should be different r
 
-      return item;
-    }
-  });
-
-  // for (let i = 0; i < props.retroItems.length; i++) {
-  //   // console.log(props.retroItems[i].category)
-  //   if (props.category === props.retroItems[i].category) {
-  //     // then post the object
-  //     newRetroItems.push(props.retroItems[i]);
+  //     return item;
   //   }
-  // }
+  // });
 
   return (
     <div className={`RetroCategory RetroCategory-${props.category}`}>
@@ -113,9 +90,6 @@ export default function NewItem(props) {
       {props.retroItems
         .filter((item) => {
           if (props.category === item.category) {
-            // console.log(item); // Same idea, but change this
-            // newRetroItems.push(props.retroItems[i]) // This should be different r
-
             return item;
           }
         })
@@ -149,8 +123,14 @@ export default function NewItem(props) {
                     <FontAwesomeIcon icon={faTrashCan} />
                   </button>
                   <div>
-                    <LikeBtn></LikeBtn>
-                    <DislikeBtn></DislikeBtn>
+                    <LikeBtn
+                      likes={props.likes}
+                      setLikes={props.setLikes}
+                    ></LikeBtn>
+                    <DislikeBtn
+                      dislikes={props.dislikes}
+                      setDislikes={props.setDislikes}
+                    ></DislikeBtn>
                     <button
                       type="button"
                       className="button button-right"
