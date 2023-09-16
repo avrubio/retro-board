@@ -1,20 +1,18 @@
-import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
 
-export function LikeBtn(props) {
-  // updates likes
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-  const like = () => props.setLikes(props.likes + 1);
+export function LikeBtn({ likes, itemId, onLikeClick }) {
+
   return (
     <button
       type="button"
       className="button button-left"
       title="Like"
-      onClick={like}
-      // when clicked on it increases the counter
+      onClick={() => onLikeClick(itemId)}
     >
-      <FontAwesomeIcon icon={faThumbsUp} /> {props.likes}
-      {/* increases the counter and displays it to user*/}
+      <FontAwesomeIcon icon={faThumbsUp} /> {likes}
     </button>
   );
 }

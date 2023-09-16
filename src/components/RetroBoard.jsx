@@ -1,18 +1,16 @@
 import { useState } from "react";
 
-import { DislikeBtn } from "./Buttons/DislikeBtn";
-import { LikeBtn } from "./Buttons/LikeBtn";
 import NewItem from "./Buttons/NewItem";
 
 export function RetroBoard() {
   const [retroItems, setRetroItems] = useState([
-    { category: "", userInput: "", id: 0 },
+    { category: "", userInput: "", id: 0, likes: 0, dislikes: 0 },
   ]);
 
   const [id, setId] = useState(0);
-
   let [likes, setLikes] = useState(0);
-  let [dislikes, setDislikes] = useState(0);
+  // let [dislikes, setDislikes] = useState(0);
+
   return (
     <>
       {/*<!-- The class "row" is for the layout changer --> */}
@@ -32,12 +30,9 @@ export function RetroBoard() {
             title="Went Well"
             likes={likes}
             setLikes={setLikes}
-            dislikes={dislikes}
-            setDislikes={setDislikes}
-          >
-            <LikeBtn></LikeBtn>
-            <DislikeBtn></DislikeBtn>
-          </NewItem>
+            // dislikes={dislikes}
+            // setDislikes={setDislikes}
+          ></NewItem>
 
           {/* <!-- Retro category --> */}
 
@@ -50,12 +45,9 @@ export function RetroBoard() {
             title="To Improve"
             likes={likes}
             setLikes={setLikes}
-            dislikes={dislikes}
-            setDislikes={setDislikes}
-          >
-            <LikeBtn></LikeBtn>
-            <DislikeBtn></DislikeBtn>
-          </NewItem>
+            // dislikes={dislikes}
+            // setDislikes={setDislikes}
+          ></NewItem>
           {/* <!-- Retro category --> */}
 
           <NewItem
@@ -67,12 +59,9 @@ export function RetroBoard() {
             title="Action Items"
             likes={likes}
             setLikes={setLikes}
-            dislikes={dislikes}
-            setDislikes={setDislikes}
-          >
-            <LikeBtn></LikeBtn>
-            <DislikeBtn></DislikeBtn>
-          </NewItem>
+            // dislikes={dislikes}
+            // setDislikes={setDislikes}
+          ></NewItem>
         </div>
       </main>
     </>

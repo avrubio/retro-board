@@ -16,7 +16,13 @@ export default function NewItem(props) {
     let newId = props.id + 1;
     props.setRetroItems([
       ...props.retroItems,
-      { category: props.category, userInput: "", id: newId },
+      {
+        category: props.category,
+        userInput: "",
+        id: newId,
+        likes: 0,
+        dislikes: 0,
+      },
     ]);
     props.setId(newId);
   };
@@ -35,6 +41,37 @@ export default function NewItem(props) {
     props.setRetroItems(props.retroItems.filter((item) => item.id !== itemId));
   };
 
+  const handleLikeClick = (itemId) => {
+    // Find the index of the item with the specified id
+    const itemIndex = props.retroItems.findIndex((item) => item.id === itemId);
+
+    if (itemIndex !== -1) {
+      // Create a copy of the items array
+      const updatedItems = [...props.retroItems];
+      updatedItems[itemIndex] = {
+        ...updatedItems[itemIndex],
+        likes: updatedItems[itemIndex].likes + 1, // updated likes count
+      };
+      // Update the state with the new array
+      props.setRetroItems(updatedItems);
+    }
+  };
+
+  const handleDislikeClick = (itemId) => {
+    // Find the index of the item with the specified id
+    const itemIndex = props.retroItems.findIndex((item) => item.id === itemId);
+
+    if (itemIndex !== -1) {
+      // Create a copy of the items array
+      const updatedItems = [...props.retroItems];
+      updatedItems[itemIndex] = {
+        ...updatedItems[itemIndex],
+        likes: updatedItems[itemIndex].dislikes + 1, // updated likes count
+      };
+      // Update the state with the new array
+      props.setRetroItems(updatedItems);
+    }
+  };
   // moves items in the direction user inputs
   const moveItem = (id, direction) => {
     for (let i = 0; i < props.retroItems.length; i++) {
@@ -95,7 +132,7 @@ export default function NewItem(props) {
         })
         .map((item, id) => {
           return (
-            <div className="RetroCard" aria-label="Retro card">
+            <div key={id} className="RetroCard" aria-label="Retro card">
               <div key={`retro-item${id}`}>
                 <textarea
                   className="textbox"
@@ -124,12 +161,14 @@ export default function NewItem(props) {
                   </button>
                   <div>
                     <LikeBtn
-                      likes={props.likes}
-                      setLikes={props.setLikes}
-                    ></LikeBtn>
+                      likes={item.likes}
+                      itemId={item.id}
+                      onLikeClick={handleLikeClick}
+                    />
                     <DislikeBtn
-                      dislikes={props.dislikes}
-                      setDislikes={props.setDislikes}
+                      dislikes={item.dislikes}
+                      itemId={item.id}
+                      onDislikeClick={handleDislikeClick}
                     ></DislikeBtn>
                     <button
                       type="button"
