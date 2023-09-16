@@ -66,7 +66,7 @@ export default function NewItem(props) {
       const updatedItems = [...props.retroItems];
       updatedItems[itemIndex] = {
         ...updatedItems[itemIndex],
-        likes: updatedItems[itemIndex].dislikes + 1, // updated likes count
+        dislikes: updatedItems[itemIndex].dislikes + 1, // updated likes count
       };
       // Update the state with the new array
       props.setRetroItems(updatedItems);
