@@ -10,7 +10,7 @@ export function DislikeBtn({ dislikes, itemId, onDislikeClick }) {
       type="button"
       className="button button-left"
       title="Dislike "
-      onClick={() => onDislikeClick(dislikes + 1)}
+      onClick={() => onDislikeClick(itemId)}
       // when clicked on it increases the counter
     >
       <FontAwesomeIcon icon={faThumbsDown} /> {dislikes}
